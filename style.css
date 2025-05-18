@@ -1,0 +1,116 @@
+/* Основні кольори */
+:root {
+    --primary: #6a0dad;
+    --primary-hover: #8a2be2;
+    --accent: #fce4ec;
+    --text-light: #fff;
+    --text-dark: #333;
+    --correct: #00c853;
+    --wrong: #d50000;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(160deg, #fce4ec, #d1c4e9, #b39ddb);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start, .question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+.statistics {
+    font-size: 20px;
+    color: var(--text-dark);
+    min-height: 40px;
+}
+
+.start-btn {
+    font-size: 32px;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--primary);
+    color: var(--text-light);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+}
+
+.question-container {
+    display: none;
+}
+
+.question {
+    font-size: 64px;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.answers-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.answer {
+    background-color: var(--primary);
+    color: var(--text-light);
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    user-select: none;
+}
+
+.answer:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-hover);
+}
+
+.answer.correct {
+    background-color: var(--correct) !important;
+}
+.answer.wrong {
+    background-color: var(--wrong) !important;
+}
+
+
+@media (max-width: 600px) {
+    .question {
+        font-size: 40px;
+    }
+
+    .start-btn {
+        font-size: 24px;
+        padding: 15px 30px;
+    }
+
+    .answer {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .statistics {
+        font-size: 16px;
+    }
+}
